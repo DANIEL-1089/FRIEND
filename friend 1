@@ -1,0 +1,54 @@
+#include <iostream>
+#include <ctime>
+#include <wchar.h>
+#include <Windows.h>
+#include <algorithm>
+#include <vector>
+#include <string>
+#include <string.h>
+#include <stdlib.h>
+#include <cstring>
+#include <conio.h>
+#include <iomanip>
+#include <process.h>
+#include <ctime>
+#include <cstdlib>
+
+
+
+using namespace std;
+class beta;
+
+class alpha {
+private:
+    int data;
+public:
+    alpha() : data(3)
+    {}
+
+    friend int frifunc(alpha, beta);
+};
+
+class beta {
+private:
+    int data;
+public:
+    beta() : data(7)
+    {}
+
+    friend int frifunc(alpha, beta);
+};
+int frifunc(alpha a, beta b) {
+    return (a.data + b.data);
+}
+
+
+int main()
+{
+    alpha aa;
+    beta bb;
+    
+    cout << frifunc(aa, bb) << endl;
+
+    return 0;
+}
